@@ -22,34 +22,28 @@ class NormalizeAmountOperation(Operation):
         raw_value = record.get(self.field_name)
         type_value = record.get(self.target_type)
         errors = []
-        
+
         if raw_value is None or (isinstance(raw_value, str) and raw_value.strip() == ""):
             errors.append(f"Error: Campo '{self.field_name}' es None.")
             Logger.add_to_log("error",f"Error: Campo requerido '{self.field_name}' ausente o vacío.")
             return errors
-                    
-        pattern = r"^(?:\d+(?:[.,]\d+)?)([A-Za-z]*)$"
+        pattern = r"^(\d+(?:[.,]\d+)?)([A-Za-z]{3})?$"
         match = re.fullmatch(pattern, raw_value)
-        
+
         if not match:
             errors.append(f"Error: Campo '{self.field_name}' es None.")
             Logger.add_to_log("error",f"Error: El valor del campo '{self.field_name}' = '{raw_value}' no coincide con el formato numérico estándar (float). ")
             return errors
+        
                     
         raw_value = match.group(1).replace(",", ".") 
-        record[self.field_name]=raw_value
+        record[self.field_name]=float(raw_value)
+
         return record
         
     
     def validar(self, record: dict) -> list:
-        errors = []
-        value = record.get(self.field_name)
-
-        if value is None:
-            errors.append(f"Error: Campo '{self.field_name}' es inválido o no fue transformado correctamente.")
-            Logger.add_to_log("error", f"Error: Campo '{self.field_name}' es inválido o no fue transformado correctamente.")
-
-        return errors
+        return record
 
     
 

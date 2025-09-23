@@ -5,7 +5,8 @@ records = [
         "customer_name": "Luis Vargas",
         "amount": "123,45 EUR",
         "timestamp": "2024-10-26T14:00:00Z"
-    },
+    }
+    ,
     {
         "__type__": "order_event",
         "order_id": "ORD100",
@@ -25,6 +26,6 @@ records = [
         "price": "25.00",
         #"is_active"
     },
-    {},
+    {}
 ]
 

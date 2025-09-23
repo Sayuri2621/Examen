@@ -16,8 +16,13 @@ if __name__ == "__main__":
         NormalizeAmountOperation(field_name="price",target_type="__type__"),
         ContextualFieldValidation(field_name="product_sku",target_type="__type__", required=True, regex=r"^SKU_P\d{3}$"),
     ]
+    
+    required_fields = {
+        "order_event": ["order_id", "customer_name", "amount", "timestamp"],
+        "product_update": ["product_sku", "price", "is_active"]
+    }
 
-    gestor = RecordContextManager()
+    gestor = RecordContextManager(required_fields=required_fields)
     
     for objeto in operaciones_order_event:
         gestor.registrar_contexto("order_event", operaciones_order_event)
