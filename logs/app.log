@@ -1,0 +1,31 @@
+2025-09-23 16:37:12 | ERROR | Error: El valor del campo 'amount' = '123,45 EUR' no coincide con el formato numérico estándar (float). 
+2025-09-23 16:37:12 | INFO | 
+
+
+ LOGGERS DE VALIDAR 
+
+
+
+2025-09-23 16:37:12 | ERROR | Error: campo 'order_id' no cumple con el patrón requerido 'ORD###' , el valor recibido es '0RD789'.
+2025-09-23 16:37:12 | INFO | 
+
+
+ LOGGERS DE VALIDAR 
+
+
+
+2025-09-23 16:37:12 | ERROR | Error: El valor del campo 'amount' = 'no_es_un_numero' no coincide con el formato numérico estándar (float). 
+2025-09-23 16:37:12 | INFO | 
+
+
+ LOGGERS DE VALIDAR 
+
+
+
+2025-09-23 16:37:12 | INFO | 
+
+
+ LOGGERS DE VALIDAR 
+
+
+
