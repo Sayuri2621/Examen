@@ -1,6 +1,6 @@
 # Desafío Python
 
-### Comparaión
+### Comparación
 
 Funciones puras
 ```
